@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net"
 	"os"
@@ -111,6 +112,7 @@ func main() {
 			panic(err)
 		}
 
+		fmt.Print(".")
 		// route RTP packet to the server
 		err = c.WritePacketRTP(medi, &pkt)
 		if err != nil {
